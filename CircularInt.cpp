@@ -26,13 +26,13 @@ using namespace std;
 	
 	 CircularInt operator- (const int &x ,const CircularInt &circ){
 		CircularInt ans = circ;
-		int tmp = ans.number;
+		int tmp = ans.num;
 		return ans; 
 	}
 	
 	CircularInt CircularInt::operator* (const int &x){
 		CircularInt ans = *this;
-		//result.number *= x;		
+		//result.num *= x;		
 		return ans;
 	}
 	CircularInt& CircularInt::operator*= (const int &x){
