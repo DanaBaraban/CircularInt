@@ -25,7 +25,7 @@ class CircularInt{
 	CircularInt operator++ (int);
 	//ostream &operator<<(ostream &os);
 	
-	friend ostream &operator<<(ostream &os ,  CircularInt &m);
+	//friend ostream &operator<<(ostream &os ,  CircularInt &m);
 	
 	void add(int x);
 	void minus(int x);
