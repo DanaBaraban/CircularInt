@@ -1,8 +1,7 @@
 #include <iostream>
 #include <string>
-using namespace std;
 #pragma once
-
+using namespace std;
 
 class CircularInt{
 	public:
@@ -11,7 +10,6 @@ class CircularInt{
 	int last;
 	
 	CircularInt(int x1, int y1);
-	
 	CircularInt operator+ (const CircularInt &circ);
 	friend CircularInt operator+ ( CircularInt &circ, const int &x);
 	friend CircularInt operator+ (const int &x ,const CircularInt &circ);
@@ -25,12 +23,9 @@ class CircularInt{
 	CircularInt &operator++ ();
 	CircularInt operator++ (int);
 	ostream &operator<<(ostream &os);
-	
 	friend ostream &operator<<(ostream &ost ,  CircularInt &m);
-	
+	friend std::ostream& operator<<(std::ostream& os, CircularInt const& r);	
 	void add(int x);
 	void minus(int x);
 	void fix();
-	
-	friend std::ostream& operator<<(std::ostream& os, CircularInt const& r);
 };
