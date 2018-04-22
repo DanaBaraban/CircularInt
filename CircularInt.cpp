@@ -17,9 +17,9 @@ CircularInt operator/ (const CircularInt &circ, const int &x){}
 CircularInt& CircularInt :: operator+= (const int &x){}
 CircularInt& CircularInt :: operator++ (){}
 CircularInt CircularInt :: operator++ (int){}
-ostream &operator<<(ostream &os){}
-ostream &operator<<(ostream &ost ,  CircularInt &m){}
-std::ostream& operator<<(std::ostream& os, CircularInt const& r){}	
+ostream& CircularInt :: operator<<(ostream &os){}
+ostream& CircularInt :: operator<<(ostream &ost ,  CircularInt &m){}
+std::ostream& CircularInt :: operator<<(std::ostream& os, CircularInt const& r){}	
 
 void CircularInt :: add(int x){}
 void CircularInt :: minus(int x){}
