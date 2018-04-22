@@ -1,26 +1,90 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
+
 #include "CircularInt.hpp"
 
-CircularInt :: CircularInt (int x1, int y1){}
 	
-CircularInt CircularInt :: operator+ (const CircularInt &circ){CircularInt ans; return ans;}
-CircularInt operator+ ( CircularInt &circ, const int &x){CircularInt ans; return ans;}
-CircularInt operator+ (const int &x ,const CircularInt &circ){CircularInt ans; return ans;}
-CircularInt operator- (const int &x ,const CircularInt &circ){CircularInt ans; return ans;}
-CircularInt CircularInt :: operator* (const int &x){CircularInt ans; return ans;}
-CircularInt& CircularInt :: operator*= (const int &x){CircularInt ans; return ans;}
-CircularInt operator- (const CircularInt &circ){CircularInt ans; return ans;}
-CircularInt CircularInt :: operator- (const int &x){CircularInt ans; return ans;}
-CircularInt operator/ (const CircularInt &circ, const int &x){CircularInt ans; return ans;}
-CircularInt& CircularInt :: operator+= (const int &x){CircularInt ans; return ans;}
-CircularInt& CircularInt :: operator++ (){CircularInt ans; return ans;}
-CircularInt CircularInt :: operator++ (int){CircularInt ans; return ans;}
-ostream& CircularInt :: operator<<(ostream &os){CircularInt ans; return ans;}
-ostream& CircularInt :: operator<<(ostream &ost ,  CircularInt &m){CircularInt ans; return ans;}
-std::ostream& CircularInt :: operator<<(std::ostream& os, CircularInt const& r){CircularInt ans; return ans;}
+	CircularInt::CircularInt(int x1, int y1){
+	}
+	
+	CircularInt CircularInt::operator+ (const CircularInt &circ){
+		CircularInt ans = *this;		
+		return ans;
+	}
 
-void CircularInt :: add(int x){}
-void CircularInt :: minus(int x){}
-void CircularInt :: fix(){}
+	 CircularInt operator+ ( CircularInt &circ, const int &x){
+		CircularInt ans = circ;
+		return ans; 
+	}
+	
+	  CircularInt operator+ (const int &x ,const CircularInt &circ){
+		CircularInt ans = circ;
+		return ans; 
+	}
+	
+	 CircularInt operator- (const int &x ,const CircularInt &circ){
+		CircularInt ans = circ;
+		int tmp = ans.number;
+		return ans; 
+	}
+	
+	CircularInt CircularInt::operator* (const int &x){
+		CircularInt ans = *this;
+		//result.number *= x;		
+		return ans;
+	}
+	CircularInt& CircularInt::operator*= (const int &x){
+		*this = *this * x;
+		return *this; 
+	}
+	
+	 CircularInt operator- (const CircularInt &circ) {
+		CircularInt ans = circ;
+		return ans;
+	}
+	
+	CircularInt CircularInt::operator- (const int &x){
+		CircularInt ans = *this;
+		return ans; 
+	}
+	
+	 CircularInt operator/ (const CircularInt &circ, const int &x) {
+		CircularInt ans = circ;
+		return ans; 	
+	}
+	
+	CircularInt& CircularInt::operator+= (const int &x){
+		*this = *this + x;
+		return *this; 
+	}
+	
+	CircularInt& CircularInt::operator++ (){
+		(*this)+=1;
+		return *this; 
+	}
+	
+	CircularInt CircularInt::operator++ (int){
+		CircularInt ans = *this;		
+		return ans; 
+	}
+	ostream& CircularInt::operator<<(ostream &os ) { 
+		return os;
+	}
+	
+	ostream &operator<<(ostream &os ,  CircularInt &m) { 
+		return os;
+	}
+	
+	void CircularInt::add(int x){	
+	}
+	void CircularInt::minus(int x){
+	}
+	void CircularInt::fix(){
+	}
+
+
+	ostream &operator<<(ostream &os, const CircularInt &r){
+	 return os;
+	}
