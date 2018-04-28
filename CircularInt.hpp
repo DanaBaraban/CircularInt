@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #pragma once
-using namespace std;
 
 class CircularInt{
 	public:
@@ -22,10 +21,10 @@ class CircularInt{
 	CircularInt& operator+= (const int &x);
 	CircularInt &operator++ ();
 	CircularInt operator++ (int);
-	ostream &operator<<(ostream &os);
-	friend ostream &operator<<(ostream &ost ,  CircularInt &m);
-	friend std::ostream& operator<<(std::ostream& os, CircularInt const& r);	
+	std::ostream &operator<<(std::ostream &ost);
+	friend std::ostream &operator<<(std::ostream &ost , CircularInt &m);
+	friend std::ostream& operator<<(std::ostream& os, CircularInt const& r);
 	void add(int x);
 	void minus(int x);
-	void fix();
+	void fix();	
 };
