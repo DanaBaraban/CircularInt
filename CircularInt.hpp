@@ -6,7 +6,8 @@ class CircularInt{
 	public:
 	int num;
 	int first;
-	int last;
+    int last;
+    int range;
 	
 	CircularInt(int x1, int y1);
 	CircularInt operator+ (const CircularInt &circ);
