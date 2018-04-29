@@ -7,6 +7,7 @@ CircularInt :: CircularInt (int x1, int y1){
     this -> first = x1;
     this -> last = y1;
     num = first;
+    range = last - first + 1;
 }
 CircularInt CircularInt :: operator+ (const CircularInt &circ){
     CircularInt ans = *this;
@@ -360,21 +361,22 @@ void CircularInt :: minus(int x){
     fix();
 }
 void CircularInt :: fix(){
-    while (num < first){
-            num = num + (last - first + 1);
-    }
-    while (num > last){
-            num = num - (last - first + 1);
-    }
+    if(num >= first && num <= last)
+        return;
+    
+    while(num > last)
+        num -= range;
+    while(num < first)
+        num += range;
 }
 int CircularInt :: fix(int n){
     if(n >= first && n <= last)
         return n;
     
-    while(n > last)
-        n -= num;
+    while(n > last )
+        n -= range;
     while(n < first)
-        n += num;
+        n += range;
     
     return n;
 }
