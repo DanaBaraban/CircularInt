@@ -93,7 +93,56 @@ std::ostream &operator<<(ostream &ost, CircularInt &m){
 std::ostream& operator<<(std::ostream& ost, CircularInt const& r){
     ost << r.num;
     return ost;
-}	
+}
+const bool CircularInt :: operator< (const CircularInt &circ) const{
+    return num < circ.num;
+}
+const bool CircularInt :: operator<= (const CircularInt &circ) const{
+    return num <= circ.num;
+}
+const bool CircularInt :: operator> (const CircularInt &circ) const{
+    return num > circ.num;
+}
+const bool CircularInt :: operator>= (const CircularInt &circ) const{
+    return num >= circ.num;
+}
+const bool CircularInt :: operator< (const int n) const{
+    return num < n;
+}
+const bool CircularInt :: operator<= (const int n) const{
+    return num <= n;
+}
+const bool CircularInt :: operator> (const int n) const{
+    return num > n;
+}
+const bool CircularInt :: operator>= (const int n) const{
+    return num >= n;
+}
+const bool CircularInt :: operator== (const CircularInt &circ) const{
+    return num == circ.num;
+}
+const bool CircularInt :: operator!= (const CircularInt &circ) const{
+    return num != circ.num;
+}
+const bool CircularInt :: operator== (const int n) const{
+    return num == n;
+}
+const bool CircularInt :: operator!= (const int n) const{
+    return num != n;
+}
+const bool operator< (const int n, const CircularInt &circ) {
+    return n < circ.num;
+}
+const bool operator<= (const int n, const CircularInt &circ) {
+    return n <= circ.num;
+}
+const bool operator> (const int n, const CircularInt &circ) {
+    return n > circ.num;
+}
+
+const bool operator>= (const int n, const CircularInt &circ) {
+    return n >= circ.num;
+}
 void CircularInt :: add(int x){
     num += x;
     fix();
