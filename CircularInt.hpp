@@ -71,7 +71,6 @@ class CircularInt{
     	CircularInt operator| (const int n) const;
     	CircularInt operator<< (const int n) const;
     	CircularInt operator>>(const int n) const;
-    	CircularInt operator/ (const CircularInt &circ);
     	CircularInt operator% (const CircularInt &circ) const;
     	CircularInt operator^ (const CircularInt &circ) const;
     	CircularInt operator& (const CircularInt &circ) const;
