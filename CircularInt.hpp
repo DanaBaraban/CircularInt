@@ -18,7 +18,6 @@ class CircularInt{
 	CircularInt& operator*= (const int &x);
 	friend CircularInt operator- (const CircularInt &circ);
 	CircularInt operator- (const int &x);
-	friend CircularInt operator/ (const CircularInt &circ, const int &x);
 	CircularInt& operator+= (const int &x);
 	CircularInt &operator++ ();
 	CircularInt operator++ (int);
@@ -49,6 +48,7 @@ class CircularInt{
     friend CircularInt operator| (int n, const CircularInt &circ);
     friend CircularInt operator<< (int n, const CircularInt &circ);
     friend CircularInt operator>> (int n, const CircularInt &circ);
+    CircularInt operator/ (const CircularInt &circ);
     const CircularInt operator~ () const;
     CircularInt& operator/= (const int n);
     CircularInt& operator%= (const int n);
