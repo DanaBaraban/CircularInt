@@ -143,6 +143,214 @@ const bool operator> (const int n, const CircularInt &circ) {
 const bool operator>= (const int n, const CircularInt &circ) {
     return n >= circ.num;
 }
+CircularInt operator% (int n, const CircularInt &circ){
+    CircularInt tmp(circ);
+    tmp.num = n % tmp.num;
+    tmp.fix();
+    return tmp;
+}
+CircularInt operator^ (int n, const CircularInt &circ){
+    CircularInt tmp(circ);
+    tmp.num = n ^ tmp.num;
+    tmp.fix();
+    return tmp;
+}
+CircularInt operator& (int n, const CircularInt &circ){
+    CircularInt tmp(circ);
+    tmp.num = n & tmp.num;
+    tmp.fix();
+    return tmp;
+}
+CircularInt operator| (int n, const CircularInt &circ){
+    CircularInt tmp(circ);
+    tmp.num = n | tmp.num;
+    tmp.fix();
+    return tmp;
+}
+CircularInt operator<< (int n, const CircularInt &circ){
+    CircularInt tmp(circ);
+    tmp.num = n << tmp.num;
+    tmp.fix();
+    return tmp;
+}
+CircularInt operator>> (int n, const CircularInt &circ){
+    CircularInt tmp(circ);
+    tmp.num = n >> tmp.num;
+    tmp.fix();
+    return tmp;
+}
+const CircularInt CircularInt :: operator~ () const{
+    CircularInt tmp(*this);
+    tmp.num = ~tmp.num;
+    tmp.fix();
+    return tmp;
+}
+CircularInt& CircularInt :: operator/= (const int n){
+    *this = *this / n;
+    return *this;
+}
+CircularInt& CircularInt :: operator%= (const int n){
+    num %= n;
+    fix();
+    return *this;
+}
+CircularInt& CircularInt :: operator^= (const int n){
+    num ^= n;
+    fix();
+    return *this;
+}
+CircularInt& CircularInt :: operator&= (const int n){
+    num &= n;
+    fix();
+    return *this;
+}
+CircularInt& CircularInt :: operator|= (const int n){
+    num |= n;
+    fix();
+    return *this;
+}
+CircularInt& CircularInt :: operator<<= (const int n){
+    num <<= n;
+    fix();
+    return *this;
+}
+CircularInt& CircularInt :: operator>>= (const int n){
+    num >>= n;
+    fix();
+    return *this;
+}
+CircularInt& CircularInt :: operator/= (const CircularInt &circ){
+    *this = *this / circ.num;
+    return *this;
+}
+CircularInt& CircularInt :: operator%= (const CircularInt &circ){
+    num %= circ.num;
+    fix();
+    return *this;
+}
+CircularInt& CircularInt :: operator^= (const CircularInt &circ){
+    num ^= circ.num;
+    fix();
+    return *this;
+}
+CircularInt& CircularInt :: operator&= (const CircularInt &circ){
+    num &= circ.num;
+    fix();
+    return *this;
+}     
+CircularInt& CircularInt :: operator|= (const CircularInt &circ){
+    num |= circ.num;
+    fix();
+    return *this;
+}
+CircularInt& CircularInt :: operator<<= (const CircularInt &circ){
+    num <<= circ.num;
+    fix();
+    return *this;
+}
+CircularInt& CircularInt :: operator>>= (const CircularInt &circ){
+    num >>= circ.num;
+    fix();
+    return *this;
+}
+CircularInt CircularInt :: operator/ (const int n) {
+    int i;
+    for(i = first; i < last; i++){
+        long l = i*n;
+        int ans = fix(l);
+        if(ans == num){
+            CircularInt tmp(*this);
+            tmp.num = i;
+            return tmp;
+        }
+    }
+    throw string("There is no Integer x in the range such that x*"+to_string(n) + "="+to_string(num));
+}
+CircularInt CircularInt :: operator% (const int n) const{
+    CircularInt tmp(*this);
+    tmp.num %= n;
+    tmp.fix();
+    return tmp;
+}
+CircularInt CircularInt :: operator^ (const int n) const{
+    CircularInt tmp(*this);
+    tmp.num ^= n;
+    tmp.fix();
+    return tmp;
+}
+CircularInt CircularInt :: operator& (const int n) const{
+    CircularInt tmp(*this);
+    tmp.num &= n;
+    tmp.fix();
+    return tmp;
+}
+CircularInt CircularInt :: operator| (const int n) const{
+    CircularInt tmp(*this);
+    tmp.num |= n;
+    tmp.fix();
+    return tmp;
+}
+CircularInt CircularInt :: operator<< (const int n) const{
+    CircularInt tmp(*this);
+    tmp.num <<= n;
+    tmp.fix();
+    return tmp;
+}
+CircularInt CircularInt :: operator>>(const int n) const{
+    CircularInt tmp(*this);
+    tmp.num >>= n;
+    tmp.fix();
+    return tmp;
+}
+CircularInt CircularInt :: operator/ (const CircularInt &circ){
+    int i;
+    for(i = first ;i < last; i++){
+        int l = i * circ.num;
+        int ans = fix(l);
+        if(ans == num){
+            CircularInt tmp(*this);
+            tmp.num = i;
+            return tmp;
+        }
+    }
+    throw string("There is no Integer x in the range such that x*"+to_string(circ.num) + "="+to_string(num));
+}
+CircularInt CircularInt :: operator% (const CircularInt &circ) const{
+    CircularInt tmp(*this);
+    tmp.num %= circ.num;
+    tmp.fix();
+    return tmp;
+}
+CircularInt CircularInt :: operator^ (const CircularInt &circ) const{
+    CircularInt tmp(*this);
+    tmp.num ^= circ.num;
+    tmp.fix();
+    return tmp;
+}
+CircularInt CircularInt :: operator& (const CircularInt &circ) const{
+    CircularInt tmp(*this);
+    tmp.num &= circ.num;
+    tmp.fix();
+    return tmp;
+}
+CircularInt CircularInt :: operator| (const CircularInt &circ) const{
+    CircularInt tmp(*this);
+    tmp.num |= circ.num;
+    tmp.fix();
+    return tmp;
+}
+CircularInt CircularInt :: operator<< (const CircularInt &circ) const{
+    CircularInt tmp(*this);
+    tmp.num <<= circ.num;
+    tmp.fix();
+    return tmp;
+}
+CircularInt CircularInt :: operator>> (const CircularInt &circ) const{
+    CircularInt tmp(*this);
+    tmp.num >>= circ.num;
+    tmp.fix();
+    return tmp;
+}
 void CircularInt :: add(int x){
     num += x;
     fix();
@@ -158,4 +366,15 @@ void CircularInt :: fix(){
     while (num > last){
             num = num - (last - first + 1);
     }
+}
+int CircularInt :: fix(int n){
+    if(n >= first && n <= last)
+        return n;
+    
+    while(n > last)
+        n -= num;
+    while(n < first)
+        n += num;
+    
+    return n;
 }
