@@ -336,6 +336,19 @@ CircularInt CircularInt :: operator>> (const CircularInt &circ) const{
     tmp.fix();
     return tmp;
 }
+CircularInt operator/ (int n, CircularInt &circ){
+    int i;
+    for(i = circ.first; i < circ.last; i++){
+        long l = i * circ.num;
+        int ans = circ.fix(l);
+        if(ans == n){
+            CircularInt tmp(circ);
+            tmp.num = i;
+            return tmp;
+        }
+    }
+    throw string("There is no Integer x in the range such that x*"+to_string(circ.num) + "="+to_string(n));
+}
 void CircularInt :: add(int x){
     num += x;
     fix();
