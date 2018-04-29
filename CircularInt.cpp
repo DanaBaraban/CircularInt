@@ -53,22 +53,6 @@ CircularInt& CircularInt :: operator*= (const int &x){
     fix();
     return *this;
 }
-// CircularInt CircularInt :: operator/ (const CircularInt &circ, const int &x){
-// 	CircularInt ans = circ;
-// 	if(ans.num % x == 0){
-// 		ans.num = ans.num / x;
-// 	}
-// 	else {
-// 		//"There is no number x in {1,12} such that x*3=10"
-// 		string str = "There is no number x in {";
-// 		string end = NumberToString(circ.last);
-// 		string start = NumberToString(circ.first);
-// 		string num = NumberToString(circ.num);
-// 		string x = NumberToString(x);
-// 		string message = str + start + "," + end + "} such that x*" + x + "=" + num ;
-//         throw message;
-//     }
-// }
 CircularInt& CircularInt :: operator+= (const int &x){
     CircularInt ans = *this;
     ans.add(x);
@@ -302,6 +286,19 @@ CircularInt CircularInt :: operator>>(const int n) const{
     tmp.num >>= n;
     tmp.fix();
     return tmp;
+}
+CircularInt CircularInt :: operator/ (const CircularInt &circ) {
+    int i;
+    for(i = first ;i < last; i++){
+        int l = i * circ.num;
+        int ans = fix(l);
+        if(ans == num){
+            CircularInt tmp(*this);
+            tmp.num = i;
+            return tmp;
+        }
+    }
+    throw string("There is no Integer x in the range such that x*"+to_string(circ.num) + "="+to_string(num));
 }
 CircularInt CircularInt :: operator/ (const CircularInt &circ){
     int i;
